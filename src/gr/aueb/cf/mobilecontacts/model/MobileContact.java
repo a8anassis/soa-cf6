@@ -14,6 +14,12 @@ public class MobileContact extends AbstractEntity implements IdentifiableEntity 
         this.phoneNumber = phoneNumber;
     }
 
+    public MobileContact(MobileContact mobileContact) {
+        this.setId(mobileContact.getId());
+        this.userDetails = new UserDetails(mobileContact.getUserDetails());
+        this.phoneNumber = mobileContact.getPhoneNumber();
+    }
+
     public UserDetails getUserDetails() {
         return new UserDetails(userDetails);
     }
