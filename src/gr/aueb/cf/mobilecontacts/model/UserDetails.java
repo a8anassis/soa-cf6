@@ -9,12 +9,13 @@ public class UserDetails extends AbstractEntity implements IdentifiableEntity {
     }
 
     public UserDetails(long id, String firstname, String lastname) {
-        setId(id);
+        this.setId(id);
         this.firstname = firstname;
         this.lastname = lastname;
     }
 
     public UserDetails(UserDetails userDetails) {
+        setId(userDetails.getId());
         this.firstname = userDetails.getFirstname();
         this.lastname = userDetails.getLastname();
     }
@@ -22,15 +23,12 @@ public class UserDetails extends AbstractEntity implements IdentifiableEntity {
     public String getFirstname() {
         return firstname;
     }
-
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
-
     public String getLastname() {
         return lastname;
     }
-
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -38,6 +36,7 @@ public class UserDetails extends AbstractEntity implements IdentifiableEntity {
     @Override
     public String toString() {
         return "UserDetails{" +
+                "id=" + getId() +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';

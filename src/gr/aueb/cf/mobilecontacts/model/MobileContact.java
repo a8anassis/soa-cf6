@@ -8,7 +8,8 @@ public class MobileContact extends AbstractEntity implements IdentifiableEntity 
 
     }
 
-    public MobileContact(UserDetails userDetails, String phoneNumber) {
+    public MobileContact(long id, UserDetails userDetails, String phoneNumber) {
+        this.setId(id);
         this.userDetails = new UserDetails(userDetails) ;
         this.phoneNumber = phoneNumber;
     }
@@ -16,15 +17,12 @@ public class MobileContact extends AbstractEntity implements IdentifiableEntity 
     public UserDetails getUserDetails() {
         return new UserDetails(userDetails);
     }
-
     public void setUserDetails(UserDetails userDetails) {
         this.userDetails = new UserDetails(userDetails);
     }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -32,6 +30,7 @@ public class MobileContact extends AbstractEntity implements IdentifiableEntity 
     @Override
     public String toString() {
         return "MobileContact{" +
+                "id" + getId() +
                 "userDetails=" + userDetails +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
