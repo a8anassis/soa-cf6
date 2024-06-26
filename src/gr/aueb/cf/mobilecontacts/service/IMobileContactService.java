@@ -10,6 +10,7 @@ import gr.aueb.cf.mobilecontacts.service.exceptions.UserIdAlreadyExistsException
 import java.util.List;
 
 public interface IMobileContactService {
+
     MobileContact insertMobileContact(MobileContactInsertDTO dto)
             throws PhoneNumberAlreadyExistsException, UserIdAlreadyExistsException;
 
@@ -22,7 +23,8 @@ public interface IMobileContactService {
 
     MobileContact getMobileContactById(long id) throws ContactNotFoundException;
 
-    MobileContact getMobileContactByPhoneNumber() throws ContactNotFoundException;
+    MobileContact getMobileContactByPhoneNumber(String phoneNumber)
+            throws ContactNotFoundException;
 
     List<MobileContact> getAllMobileContacts();
 }
