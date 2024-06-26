@@ -28,4 +28,11 @@ public class MobileContactReadOnlyDTO extends BaseDTO {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Firstname: " + userDetailsReadOnlyDTO.getFirstname()
+                + "Lastname: " + userDetailsReadOnlyDTO.getLastname()
+                + "Phone number: " + getPhoneNumber();
+    }
 }
