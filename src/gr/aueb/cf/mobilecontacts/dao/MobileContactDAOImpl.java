@@ -53,7 +53,7 @@ public class MobileContactDAOImpl implements IMobileContactDAO {
 
     @Override
     public List<MobileContact> getAll() {
-        return new ArrayList<>(contacts); // Collections.unmodifiableList(contacts);
+        return new ArrayList<>(contacts);
     }
 
     @Override
